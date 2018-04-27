@@ -2,8 +2,8 @@
 - in japan
 - all resturant which have online reservation service
 - components of project github
-1- Code folder: contains codes of data processing, data visulaziation and forcasting models.
-2- Files folder: contains input files and output files. output files folder includes graphes, pictures and histograms of two models.
+  - Code folder: contains codes of data processing, data visulaziation and forcasting models.
+  - Files folder: contains input files and output files. output files folder includes graphes, pictures and histograms of two models.
 
 ## Summary of project
 ### The problem
