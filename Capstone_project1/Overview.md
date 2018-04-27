@@ -32,6 +32,7 @@ They were downloaded from https://www.kaggle.com/c/recruit-restaurant-visitor-fo
 - using google map
 #### histograms
 - daily
+- weakly
 - monthly
 - holiday
 - area
@@ -42,7 +43,7 @@ They were downloaded from https://www.kaggle.com/c/recruit-restaurant-visitor-fo
 ### Porphet model
 - link to the code: 
 - gives general tred of all reservation over the time in all resturant
-- Seasonal, monthly, weakly, daily variation
+- Seasonal, monthly, weekly, daily variation
 ### Calssification model
 - link to the code: 
 - Random forest model
