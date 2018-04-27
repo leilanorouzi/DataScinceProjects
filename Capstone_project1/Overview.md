@@ -18,6 +18,7 @@ They were downloaded from https://www.kaggle.com/c/recruit-restaurant-visitor-fo
 - in hpg data
 ## Data processing
 ### Visulazation the data
+- link to graphs : https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Files/Outputs/Graphes
 #### resturant locations on the map
 #### histograms
 ## Prediction model
