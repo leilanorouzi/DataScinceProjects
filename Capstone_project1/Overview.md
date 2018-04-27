@@ -2,8 +2,8 @@
 - in japan
 - all resturant which have online reservation service
 - components of project github
-  - Code folder: contains codes of data processing, data visulaziation and forcasting models.
-  - Files folder: contains input files and output files. output files folder includes graphes, pictures and histograms of two models.
+  - [Code folder](https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Codes): contains codes of data processing, data visulaziation and forcasting models.
+  - [Files folder](https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Files): This folder contains [input files](https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Files/Inputs) and  [output files](https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Files/Outputs). This folder includes graphes, pictures and histograms of two models.
 
 ## Summary of project
 ### The problem
