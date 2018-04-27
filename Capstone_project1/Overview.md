@@ -4,6 +4,8 @@
 - components of project github
 ## Summary of project
 ### The problem
+- what we have 
+- what is the question
 ## Data
 ### What are data?
 They were downloaded from https://www.kaggle.com/c/recruit-restaurant-visitor-forecasting/data.
@@ -27,8 +29,16 @@ They were downloaded from https://www.kaggle.com/c/recruit-restaurant-visitor-fo
 - changing categorical data to numerical data
 - why numerical data
 #### resturant locations on the map
+- using google map
 #### histograms
+- daily
+- monthly
+- holiday
+- area
+- genre
+- stores
 ## Prediction model
+- why we have two models
 ### Porphet model
 - link to the code: 
 - gives general tred of all reservation over the time in all resturant
