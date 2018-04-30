@@ -1,8 +1,8 @@
 # Summary of data description
 The original data contain:
 - Hot Pepper Gourmet (hpg): similar to Yelp, here users can search restaurants and also make a reservation online
-- AirREGI / Restaurant Board (air): similar to Square, a reservation control and cash register system
-However some of the files were biger than 25 M to upload. 
+- AirREGI / Restaurant Board (air): similar to Square, a reservation control and cash register system. 
+Some of these files were biger than 25 M. So it was not possible to upload. 
 Each file is prefaced with the source (either air_ or hpg_) to indicate its origin. Each restaurant has a unique air_store_id and hpg_store_id. 
 ### air_reserve.csv
 This file contains reservations made in the air system. Note that the reserve_datetime indicates the time when the reservation was created, whereas the visit_datetime is the time in the future where the visit will occur.
