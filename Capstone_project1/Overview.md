@@ -10,36 +10,27 @@ This project is based on [RRVF](https://www.kaggle.com/c/recruit-restaurant-visi
 Recruit Holdings has unique access to key datasets that could make automated future customer prediction possible. Specifically, Recruit Holdings owns Hot Pepper Gourmet (a restaurant review service), AirREGI (a restaurant point of sales service), and Restaurant Board (reservation log management software).
 Data are avaible on https://www.kaggle.com/c/recruit-restaurant-visitor-forecasting/data. There are some informatin about the data files following:
 
-|       File name       |   Size   |            Description           |
-|:---------------------:|:--------:|:--------------------------------:|
-| air_reserve.csv       | 5.8 MB   | Reservation data in Air system   |
-| air_store_info.csv    | 74 KB    | Air restaurants information      |
-| air_visit_data.csv    | 8.8 MB   | Visit information in air ayatem  |
-| hpg_reserve.csv       | 126.2 MB | Reservation data in hpg system   |
-| hpg_store_info.csv    | 479 KB   | Hpg restaurants information      |
-| store_id_relation.csv | 6 KB     | Visit information in  hpg system |
-| date_info.csv         | 11 KB    | Information about the date       |
-## Data wrangling
-- size of files
-- extracing data instead of dealing with categorical data
-- generating more features
-### Merging data
-- air data and hpg data using air and hpg store_id_relation
-### Extacting more data
-- year
-- month
-- day
-### missing data
-- in hpg data
-## Data processing
-### Visulazation the data
-- link to graphs : https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Files/Outputs/Graphes
-### Categorical data
-- changing categorical data to numerical data
-- why numerical data
-#### resturant locations on the map
-- using google map
-#### histograms
+|       File name       | Size of file |            Description           | Size of data (Row \times Col) |
+|:---------------------:|:------------:|:--------------------------------:|:-----------------------------:|
+| air_reserve.csv       | 5.8 MB       | Reservation data in Air system   |  92378 \times 4               |
+| air_store_info.csv    | 74 KB        | Air restaurants information      | 829 \times 5                  |
+| air_visit_data.csv    | 8.8 MB       | Visit information in air ayatem  | 252108 \times 3               |
+| hpg_reserve.csv       | 126.2 MB     | Reservation data in hpg system   | 2000320 \times 4              |
+| hpg_store_info.csv    | 479 KB       | Hpg restaurants information      | 4690 \times 5                 |
+| store_id_relation.csv | 6 KB         | Visit information in  hpg system | 150 \times 2                  |
+| date_info.csv         | 11 KB        | Information about the date       | 517 \times 3                  |
+
+More information about those data files is presentes  in [readme.md](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Inputs/Readme.md) file.
+
+## Data wrangling and visualization
+Two data set of store information, reservation data and visit data from each air and hpg data sytems were merge together to provide a whole data sets for each system. The missing values were deleted . Then both data system were combined using relation information of retaurants to generate our main data set. However, there were not the relation information for some of the entries. 
+
+This data set contains store_id, date and time, genre, location and holiday whcih are categorical data. There are 517 unique dates, 4947 unique stores, 44 different genre and 186 different area name. Regarding large number of categorical features, the categorical data were converted to the numerical data by grouping visitors over hour,day,day of te week, month, ear, store, genre and the location. This method also generates extar information. These information can help to find the best feature for our model. The code can be found here: https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Codes/Restaurant_forcats_data_processing.ipynb
+
+There are an extensive data visulazation in output directory, https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Files/Outputs/Graphes.  The [visulazation code](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Codes/Restaurant_forcats_features_visual.ipynb) can be found inthe code directory. 
+The location of the restaurants were plotted using google map in html format. Here is the location of restaurants in Tokyo.
+![Tokyo Restaurant](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Tokyo_restaurants.png)
+
 - daily
 - weakly
 - monthly
