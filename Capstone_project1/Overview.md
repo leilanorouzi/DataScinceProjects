@@ -31,13 +31,29 @@ There are an extensive data visulazation in output directory, https://github.com
 The location of the restaurants were plotted using google map in html format. Here is the location of restaurants in Tokyo.
 ![Tokyo Restaurant](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Tokyo_restaurants.png)
 
-- daily
-- weakly
-- monthly
-- holiday
-- area
-- genre
-- stores
+Other data were plotted too. 
+### People in reservation
+The distribution of the number of people in every reservation has been plotted. 
+![People in reservation](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Visitor_hist.png)
+This graph shows most of reservation was made for couples as 342459 reservation was for two people. 
+### Day of month
+Another graph shows people go to restaurant in which day. The distribution of the day  of visit is shown in 
+![Day of week](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Visit_day_hist.png)
+The plot shows no prefence in days of month. 
+### The monthly distribution
+To investigate the which month people are intent to resrve a table, the distribution of monthly reservation is shown in here:
+![Montly distribution](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Visit_month_hist.png)
+The result shows people love to dine out in pre-new-year time in December and in spring festivals in March. However people are going to go to restaurant less in summer and fall seasons.
+### Day of the week
+Using data of the day of the week, weekly distribution of the visits is shown in ![Day of week](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Weekday_hist.png)
+This histogram indicates that most of visits were made of Friday and Saturday. This shows people like to go resturant if the day after of dining is weekend. 
+### Hour of the visits
+This graph presents that when people like to eat in restaurants. 
+![Hour of visit](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Visiting_hour.png)
+### Time difference histogram
+This graph shows the distribution of time difference between the time of reservation and the time that the reservation is made for, ie the visit time. 
+![Time difference](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Time_difference_hist.png)
+
 ## Prediction model
 - why we have two models
 ### Porphet model
