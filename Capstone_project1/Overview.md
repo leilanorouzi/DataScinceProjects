@@ -74,17 +74,31 @@ Appying datetime data of visits into the model shows the trend , weekly and year
 The trend shows a slight increase in 2017. The weekly and yearly variations are similar what havef found in previus data visulaziation. 
 
 
-### [Random Forest model](SpringBoard/Capstone_project1/Codes/Restaurant_forcats_forcast_model.ipynb)
+### [Random Forest model](https://github.com/leilanorouzi/SpringBoard/Capstone_project1/Codes/Restaurant_forcats_forcast_model.ipynb)
 There are a large number of data with lots of categorical data. 
 Random forest provides a good estimation for prediction in large data number. 
 - handeling categorical data
 - handeling scaling data
 - lower chance of overfitting
 - better preformance with large number of features
+#### variables and features
+* Categorical features
+* numerical features
+#### correlation factor
+correlation coefficient of visitors and different features
+selection of features
 
+#### Approach
+- Random forest regressor
+- 
 
 ## Results
+
 ### Error and accuracy
+- R2
+- Error
 ## Recommendations
 ### Weather data
+using weather data. presented by ?
+
 ### generating data
