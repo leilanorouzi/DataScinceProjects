@@ -62,7 +62,7 @@ This plot implys that people are eating out rather in the evenings not in at noo
 ### Time difference histogram
 This graph shows the distribution of time difference between the time of reservation and the time that the reservation is made for, ie the visit time. 
 ![Time difference](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Time_difference_hist.png)
-
+There is a frequent variation in the distribution. 
 ## Prediction model
 
 ### [Porphet model](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Codes/Restaurant_forcats_forcast_prophet_model.ipynb)
@@ -70,7 +70,7 @@ Prophet model is a model for timeseries and can be apply to study the trend and 
 
 Appying datetime data of visits into the model shows the trend , weekly and yearly variation of the average visits as foloowing:
 
-![prophet model](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Mean_daily_customer1.png)
+![prophet model](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Mean_daily_customer.png)
 
 The trend shows a slight increase in 2017. The weekly and yearly variations are similar what havef found in previus data visulaziation. 
 
