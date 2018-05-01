@@ -70,7 +70,7 @@ Prophet model is a model for timeseries and can be apply to study the trend and 
 
 Appying datetime data of visits into the model shows the trend , weekly and yearly variation of the average visits as foloowing:
 
-![prophet model](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Mean_daily_customer.png)
+![prophet model](https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Files/Outputs/Graphes/prophet_model/Mean_daily_customer.png)
 
 The trend shows a slight increase in 2017. The weekly and yearly variations are similar what havef found in previus data visulaziation. 
 
