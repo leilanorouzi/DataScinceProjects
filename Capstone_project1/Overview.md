@@ -63,22 +63,26 @@ This plot implys that people are eating out rather in the evenings not in at noo
 This graph shows the distribution of time difference between the time of reservation and the time that the reservation is made for, ie the visit time. 
 ![Time difference](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Outputs/Graphes/Data_visual/Time_difference_hist.png)
 There is a frequent variation in the distribution. 
-## Prediction model
+## Prediction models
 
 ### [Porphet model](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Codes/Restaurant_forcats_forcast_prophet_model.ipynb)
 Prophet model is a model for timeseries and can be apply to study the trend and variation of features over the time. A breif documentation can be found in https://facebook.github.io/prophet/docs/quick_start.html. 
 
 Appying datetime data of visits into the model shows the trend , weekly and yearly variation of the average visits as foloowing:
-
 ![prophet model](https://github.com/leilanorouzi/SpringBoard/tree/master/Capstone_project1/Files/Outputs/Graphes/prophet_model/Mean_daily_customer_components.png)
 
 The trend shows a slight increase in 2017. The weekly and yearly variations are similar what havef found in previus data visulaziation. 
 
 
-### Calssification model
-- link to the code: 
-- Random forest model
-- why random forest
+### [Random Forest model](SpringBoard/Capstone_project1/Codes/Restaurant_forcats_forcast_model.ipynb)
+There are a large number of data with lots of categorical data. 
+Random forest provides a good estimation for prediction in large data number. 
+- handeling categorical data
+- handeling scaling data
+- lower chance of overfitting
+- better preformance with large number of features
+
+
 ## Results
 ### Error and accuracy
 ## Recommendations
