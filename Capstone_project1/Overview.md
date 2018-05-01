@@ -14,15 +14,15 @@ This project is based on [RRVF](https://www.kaggle.com/c/recruit-restaurant-visi
 Recruit Holdings has unique access to key datasets that could make automated future customer prediction possible. Specifically, Recruit Holdings owns Hot Pepper Gourmet (a restaurant review service), AirREGI (a restaurant point of sales service), and Restaurant Board (reservation log management software).
 Data are avaible on https://www.kaggle.com/c/recruit-restaurant-visitor-forecasting/data. There are some informatin about the data files following:
 
-|       File name       | Size of file |            Description           | Size of data (Row \times Col) |
+|       File name       | Size of file |            Description           | Size of data (Row × Col) |
 |:---------------------:|:------------:|:--------------------------------:|:-----------------------------:|
-| air_reserve.csv       | 5.8 MB       | Reservation data in Air system   |  92378 \times 4               |
-| air_store_info.csv    | 74 KB        | Air restaurants information      | 829 \times 5                  |
-| air_visit_data.csv    | 8.8 MB       | Visit information in air ayatem  | 252108 \times 3               |
-| hpg_reserve.csv       | 126.2 MB     | Reservation data in hpg system   | 2000320 \times 4              |
-| hpg_store_info.csv    | 479 KB       | Hpg restaurants information      | 4690 \times 5                 |
-| store_id_relation.csv | 6 KB         | Visit information in  hpg system | 150 \times 2                  |
-| date_info.csv         | 11 KB        | Information about the date       | 517 \times 3                  |
+| air_reserve.csv       | 5.8 MB       | Reservation data in Air system   |  92378 × 4               |
+| air_store_info.csv    | 74 KB        | Air restaurants information      | 829 × 5                  |
+| air_visit_data.csv    | 8.8 MB       | Visit information in air ayatem  | 252108 × 3               |
+| hpg_reserve.csv       | 126.2 MB     | Reservation data in hpg system   | 2000320 × 4              |
+| hpg_store_info.csv    | 479 KB       | Hpg restaurants information      | 4690 × 5                 |
+| store_id_relation.csv | 6 KB         | Visit information in  hpg system | 150 × 2                  |
+| date_info.csv         | 11 KB        | Information about the date       | 517 × 3                  |
 
 More information about those data files is presentes  in [readme.md](https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Files/Inputs/Readme.md) file.
 
