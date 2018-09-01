@@ -113,7 +113,7 @@ Each model result very poor r2 coeffient individually:
   - XGBoost: r2=0.1965
   - KNeighborsRegressor: r2= 0.2816
 
-The error has reduced by using the combined models. It results much better r2 of 0.7814 and a root mean logarithmic error of 0.43907 which is less than scores in Kaggle competition. Please check at the bottom of the page.
+The error has reduced by using the combined models. It results much better r2 of 0.7814 and a root mean logarithmic error of 0.43907 which is less than scores in Kaggle competition. 
 
 ## Recommendations
 To improve the prediction, we may need more information from the restaurant such as restaurant rating, The population of the area, the capacity of the store and more observation. Some people have added the weather information to their model. However, it can be a very short time forecast due to only a 10-day accurate weather forecast can be provided by the meteorological institutes. 
