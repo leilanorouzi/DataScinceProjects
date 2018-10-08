@@ -1,5 +1,8 @@
 
 # The project
+### What is InstaCart?
+https://www.instacart.com/
+### declaring the competition
 https://www.kaggle.com/c/instacart-market-basket-analysis
 ## summary
 ### Data
