@@ -30,7 +30,7 @@ Original data have been downoaded from [kaggle instacart competition website](ht
 |products|Information about products|49688x4, 1.5+ MB |product_id, product_name, aisle_id, department_id|
 
 ### Feature description
- <img align="right" width="400" src="../Capstone_project_2/Data_tables.png" alt="kjh">
+ <img align="right" width="400" src="../Capstone_project_2/Data_tables.png">
  
 - aisle_id: The code of each aisle
 - aisle: The name of the aisle
@@ -52,6 +52,9 @@ The data were larger than my laptop can handle. One solution was to use cloud se
 
 ### Rating 
 Implicit collaborative filtering
+- how many products a customer have ordered in total?
+- How many times a product has been ordered by a customer?
+- How many unique products a customer has ordered?
 
 ### Data wrnagling
 ## Extra information
