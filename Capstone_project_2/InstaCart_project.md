@@ -19,13 +19,13 @@ More information can be found in [collaborative filtering wikipage](https://en.w
 
 ## Data
 
- <img align="center" width="600" src="../Capstone_project_2/Data_tables.png">
+ <img align="center" width="700" src="../Capstone_project_2/Data_tables.png" title="The relationship between data sets">
 
 Original 7 files have been downoaded from [kaggle instacart competition website](https://www.kaggle.com/c/instacart-market-basket-analysis/data). The provided data included the history of customer purchases and information of products. Generally, the records of ordered have been grouped into prior purchases, records which have been selected to be in train data set and records which have been selected to be predicted. These data are presented in cvs format as follow:
 
 |File Name | Description | Size | Features |
 |---|---|---|---|
-|aisles|Information about the aisle of the products|134x2, 2.2+ KB |aisle_id, aisle|
+|aisles|Information about the aisle of the products|134x2, \t2.2+ KB |aisle_id, aisle|
 |departments|Information about the department of the products|21x2, 416.0+ bytes|department_id, department|
 |order_products_prior|Information of customer order history|32434489x4, 989.8 MB |order_id, product_id, add_to_cart_order, reordered |
 |order_products_train|Information of customer order history|1384617x4, 42.3 MB |order_id, product_id, add_to_cart_order, reordered |
@@ -51,14 +51,34 @@ Original 7 files have been downoaded from [kaggle instacart competition website]
 - days_since_prior_order: Indicates there are how many days since previous order of each customer
 ### Dealing with the size of data
 The data were larger than my laptop can handle. One solution was to use cloud servers such as [google colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true). It provides a free Jupyter notebook running on cloud. In this service you have option to use a CPU accelerator or a GPU accelerator one. The GPU accelerator was used in this project.
+Futhermore, when a data set was no longer requiered, it was deleted from the program to save more memory in the system. 
 
+## Data wrangling
+### Combining data
+To have proper data for the model, we need to have information of all products that every customer had purchsed. Therefore, data were combined together in few steps:
+1. Data from order_products_train and order_products_prior joined together. 
+```python
+order_product=pd.concat([order_products_prior,order_products_train]).sort_values(by=['order_id','product_id'])
+```
+2. Then product infromation were added too. Since the name of  products was not needed, product_name feature was eleminated. 
+```python
+order_product_info=order_product.join(products.set_index('product_id'),on='product_id').drop(columns=['product_name'])
+```
+3. Finally, customer information were added too.
+```python
+df=orders.join(order_product_info.set_index('order_id'),on='order_id')
+```
+The data sets all together have a large size and they also include some missing values. In addition, some extra information were needed in order to develope the model such as the rating information. Applied soloutions have been addressed following:
+### Missing data
+There two series of missing values in data sets:
+1. Entries for test sets which are indicated by 'test' in eval_set feature. There are no information about products of these orders. These data are suppose to be predict, and naturally, they were eleminated from tarining data.
+2. Entries of the first order of every customer which indicted by NAN in days_since_prior_order feature. These values were replace by -1. 
 ### Rating 
 Implicit collaborative filtering
 - how many products a customer have ordered in total?
 - How many times a product has been ordered by a customer?
 - How many unique products a customer has ordered?
 
-### Data wrnagling
 ## Extra information
 # Data visualazation
 # The model
