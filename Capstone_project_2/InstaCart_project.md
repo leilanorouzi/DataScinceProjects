@@ -18,7 +18,10 @@ More information can be found in [collaborative filtering wikipage](https://en.w
 :point_up:But there are some real problem, first of all every day there will be more new customers. These customers don't have any rating information in the dataset. Second, there are lots of products which people do not rate at all. Some people even do not rate anything even they have used them. In some cases, like here ( please check the [data](#Data) section), there is no information about customers preference at all, except people order history.  The lack of rating data can be rectified by implicit collaborative filtering. In this project I have used an approach from [Jesse Wood website](https://jessesw.com/Rec-System/). 
 
 ## Data
-Original data have been downoaded from [kaggle instacart competition website](https://www.kaggle.com/c/instacart-market-basket-analysis/data). The provided data included are the history of customer purchases. Generally, the records of ordered have been grouped into prior purchases, records which have been selected to be in train data set and records which have been selected to be predicted. These data are presented in cvs format as follow:
+
+ <img align="center" width="600" src="../Capstone_project_2/Data_tables.png">
+
+Original 7 files have been downoaded from [kaggle instacart competition website](https://www.kaggle.com/c/instacart-market-basket-analysis/data). The provided data included the history of customer purchases and information of products. Generally, the records of ordered have been grouped into prior purchases, records which have been selected to be in train data set and records which have been selected to be predicted. These data are presented in cvs format as follow:
 
 |File Name | Description | Size | Features |
 |---|---|---|---|
@@ -28,12 +31,6 @@ Original data have been downoaded from [kaggle instacart competition website](ht
 |order_products_train|Information of customer order history|1384617x4, 42.3 MB |order_id, product_id, add_to_cart_order, reordered |
 |orders|Information of orders |3421083x7, 182.7+ MB |order_id, user_id, eval_set, order_number, order_dow, order_hour_of_day, days_since_prior_order |
 |products|Information about products|49688x4, 1.5+ MB |product_id, product_name, aisle_id, department_id|
-
-
-
- <img align="right" width="585" src="../Capstone_project_2/Data_tables.png">
- 
-
 
 ### Feature description
  
