@@ -30,6 +30,8 @@ Original data have been downoaded from [kaggle instacart competition website](ht
 |products|Information about products|49688x4, 1.5+ MB |product_id, product_name, aisle_id, department_id|
 
 ### Feature description
+ <img align="right" width="400" src="../Capstone_project_2/Data_tables.png" alt="kjh">
+ 
 - aisle_id: The code of each aisle
 - aisle: The name of the aisle
 - department_id: The code of departments
@@ -45,8 +47,6 @@ Original data have been downoaded from [kaggle instacart competition website](ht
 - order_hour_of_day: The hour of the order
 - days_since_prior_order: Indicates there are how many days since previous order of each customer
 - product_name: The name of the products
-
-
 ### Dealing with the size of data
 The data were larger than my laptop can handle. One solution was to use cloud servers such as [google colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true). It provides a free Jupyter notebook running on cloud. In this service you have option to use a CPU accelerator or a GPU accelerator one. The GPU accelerator was used in this project.
 
