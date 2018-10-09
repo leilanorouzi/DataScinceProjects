@@ -29,7 +29,7 @@ Original data have been downoaded from [kaggle instacart competition website](ht
 |orders|Information of orders |3421083x7, 182.7+ MB |order_id, user_id, eval_set, order_number, order_dow, order_hour_of_day, days_since_prior_order |
 |products|Information about products|49688x4, 1.5+ MB |product_id, product_name, aisle_id, department_id|
 
- <img align="right" width="500" src="../Capstone_project_2/Data_tables.png">
+ <img align="right" width="530" src="../Capstone_project_2/Data_tables.png">*The data and the relationship between their components*
 
 
 ### Feature description
