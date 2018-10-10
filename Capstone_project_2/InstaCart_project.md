@@ -51,7 +51,10 @@ Original 7 files have been downoaded from [kaggle instacart competition website]
 - days_since_prior_order: Indicates there are how many days since previous order of each customer
 ### Dealing with the size of data
 The data were larger than my laptop can handle. One solution was to use cloud servers such as [google colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true). It provides a free Jupyter notebook running on cloud. In this service you have option to use a CPU accelerator or a GPU accelerator one. The GPU accelerator was used in this project.
-Futhermore, when a data set was no longer requiered, it was deleted from the program to save more memory in the system. 
+The data were downloaded from the kaggle ste then uploaded to the google dirve to use in the code. 
+To get access to the files on google drive an authorization code it nessacery which will be given by a linked. Basicly,you need to click on the link, log in to you google account and copy and then past the authorization code into provided empty box.
+
+Futhermore, some data were deleted from the program to recover more memory in the system, whenever those data were no longer requiered. 
 
 ## Data wrangling
 ### Combining data
@@ -68,7 +71,11 @@ order_product_info=order_product.join(products.set_index('product_id'),on='produ
 ```python
 df=orders.join(order_product_info.set_index('order_id'),on='order_id')
 ```
-The data sets all together have a large size and they also include some missing values. In addition, some extra information were needed in order to develope the model such as the rating information. Applied soloutions have been addressed following:
+The final result was exported into a csv file.
+It was large dataframe including all information on customers, orders and products including features like order_id,	user_id,	eval_set,	order_number,	order_dow,	order_hour_of_day,	days_since_prior_order,	product_id,	add_to_cart_order,	reordered,	aisle_id and	department_id.
+
+
+The data also contain some missing values. In addition, some extra information were needed in order to develope the model such as the rating information. Applied soloutions have been addressed following:
 ### Missing data
 There two series of missing values in data sets:
 1. Entries for test sets which are indicated by 'test' in eval_set feature. There are no information about products of these orders. These data are suppose to be predict, and naturally, they were eleminated from tarining data.
