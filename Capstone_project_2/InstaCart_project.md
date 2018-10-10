@@ -87,12 +87,22 @@ In implicit collaborative filtering we need a rating information of items (in th
 - how many products a customer have ordered in total?
 - How many times a product has been ordered by a customer?
 - How many unique products a customer has ordered?
+The rating value (R<sup>i</sup><sub>j</sub>) of jth product ordered by ith customer has defined as: 
+
+![equation <>](../Capstone_project_2/rating.gif)
+
+which p<sup>i</sup><sub>j</sub> is quantity of jth product ordered by ith customer and N<sup>i</sup> is total number of products ordered by the customer. 
+
 
 Related code can be found in a [rating generator](SpringBoard/Capstone_project_2/Code/ranking_generator.ipynb). 
 
 The total number of products purchased by a customer has been obtained by grouping by user_id and product_id
 ```python
+data=data.join(pd.DataFrame({'product_quantity':df.groupby('user_id').size()}).reset_index().set_index('user_id'),on=('user_id'))
 data=pd.DataFrame({'user_portion':df.groupby(['user_id','product_id']).size()}).reset_index()
+data.loc[:,'rating']=data.user_portion/data.product_quantity
+data=data.join(pd.DataFrame({'max_rating':data.groupby('user_id').rating.max()}).reset_index().set_index('user_id'),on=('user_id'))
+data.rating=(data.rating*100/data.max_rating).round()
 ```
 ## Extra information
 # Data visualazation
