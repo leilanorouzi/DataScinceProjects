@@ -86,11 +86,11 @@ There two series of missing values in data sets:
 In implicit collaborative filtering we need a rating information of items (in this case products). There is no rating data in this project, so we make it. Rating inforamtion is made from the history of customer oreders. If people like a product, they intend to buy it more and more. Therefore, the number of product ordered by a customer can be represnt the rating of the product. In this approach, We need to know:
 - how many products a customer have ordered in total?
 - How many times a product has been ordered by a customer?
-Related code can be found in a [rating generator](SpringBoard/Capstone_project_2/Code/ranking_generator.ipynb). 
+Related program can be found in a [rating generator](SpringBoard/Capstone_project_2/Code/ranking_generator.ipynb) code. 
 
 The rating value (R<sup>i</sup><sub>j</sub>) of jth product ordered by ith customer has defined as: 
 
-<img align="bottom" width="150" src="../Capstone_project_2/rating.gif">
+<img align="bottom" width="130" src="../Capstone_project_2/rating.gif">
 
 which p<sup>i</sup><sub>j</sub> is quantity of jth product ordered by ith customer and defined by grouping regarding to user_id and produc_id.
 ```python
