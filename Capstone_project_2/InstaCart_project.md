@@ -82,11 +82,18 @@ There two series of missing values in data sets:
 1. Entries for test sets which are indicated by 'test' in eval_set feature. There are no information about products of these orders. These data are suppose to be predict, and naturally, they were eleminated from tarining data.
 2. Entries of the first order of every customer which indicted by NAN in days_since_prior_order feature. These values were replace by -1. 
 #### Rating 
-Implicit collaborative filtering
+
+In implicit collaborative filtering we need a rating information of items (in this case products). There is no rating data in this project, so we make it. Rating inforamtion is made from the history of customer oreders. If people like a product, they intend to buy it more and more. Therefore, the number of product ordered by a customer can be represnt the rating of the product. In this approach, We need to know:
 - how many products a customer have ordered in total?
 - How many times a product has been ordered by a customer?
 - How many unique products a customer has ordered?
 
+Related code can be found in a [rating generator](SpringBoard/Capstone_project_2/Code/ranking_generator.ipynb). 
+
+The total number of products purchased by a customer has been obtained by grouping by user_id and product_id
+```python
+data=pd.DataFrame({'user_portion':df.groupby(['user_id','product_id']).size()}).reset_index()
+```
 ## Extra information
 # Data visualazation
 # The model
