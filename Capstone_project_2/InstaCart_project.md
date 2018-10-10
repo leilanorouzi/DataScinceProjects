@@ -51,19 +51,19 @@ Original 7 files have been downoaded from [kaggle instacart competition website]
 - days_since_prior_order: Indicates there are how many days since previous order of each customer
 ### Dealing with the size of data
 The data were larger than my laptop can handle. One solution was to use cloud servers such as [google colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true). It provides a free Jupyter notebook running on cloud. In this service you have option to use a CPU accelerator or a GPU accelerator one. The GPU accelerator was used in this project.
-The data were downloaded from the kaggle ste then uploaded to the google dirve to use in the code. 
-To get access to the files on google drive an authorization code it nessacery which will be given by a linked. Basicly,you need to click on the link, log in to you google account and copy and then past the authorization code into provided empty box.
+The data were downloaded from the kaggle ste then uploaded to the google drive to use in the code. 
+To get access to the files on google drive an authorization code it necessary which will be given by a linked. Basically,you need to click on the link, log in to you google account and copy and then past the authorization code into provided empty box.
 
-Futhermore, some data were deleted from the program to recover more memory in the system, whenever those data were no longer requiered. 
+Furthermore, some data were deleted from the program to recover more memory in the system, whenever those data were no longer required. 
 
 ## Data wrangling
 ### Combining data
-To have proper data for the model, we need to have information of all products that every customer had purchsed. Therefore, data were combined together in few steps:
+To have proper data for the model, we need to have information of all products that every customer had purchased. Therefore, data were combined together in few steps:
 1. Data from order_products_train and order_products_prior joined together. 
 ```python
 order_product=pd.concat([order_products_prior,order_products_train]).sort_values(by=['order_id','product_id'])
 ```
-2. Then product infromation were added too. Since the name of  products was not needed, product_name feature was eleminated. 
+2. Then product information were added too. Since the name of  products was not needed, product_name feature was eliminated. 
 ```python
 order_product_info=order_product.join(products.set_index('product_id'),on='product_id').drop(columns=['product_name'])
 ```
@@ -75,8 +75,8 @@ The final result was exported into a csv file.
 It was large dataframe including all information on customers, orders and products. The size of the file was more than 3 GB with 33894106 entries. The datafarme was consist of 12 features: order_id,	user_id,	eval_set,	order_number,	order_dow,	order_hour_of_day,	days_since_prior_order,	product_id,	add_to_cart_order,	reordered,	aisle_id and	department_id.
 The code related to this part of project can be found in [InstaCart_data_combining.ipynb](../Capstone_project_2/Code/InstaCart_data_combining.ipynb)
       
-### Tackeling data problem
-The data also contain some missing values. In addition, some extra information were needed in order to develope the model such as the rating information. Applied soloutions have been addressed following:
+### Tackling data problem
+The data also contain some missing values. In addition, some extra information were needed in order to develope the model such as the rating information. Applied solutions have been addressed following:
 #### Missing data
 There two series of missing values in data sets:
 1. Entries for test sets which are indicated by 'test' in eval_set feature. There are no information about products of these orders. These data are suppose to be predict, and naturally, they were eleminated from tarining data.
@@ -86,13 +86,13 @@ There two series of missing values in data sets:
 In implicit collaborative filtering we need a rating information of items (in this case products). There is no rating data in this project, so we make it. Rating inforamtion is made from the history of customer oreders. If people like a product, they intend to buy it more and more. Therefore, the number of product ordered by a customer can be represnt the rating of the product. In this approach, We need to know:
 - how many products a customer have ordered in total?
 - How many times a product has been ordered by a customer?
+
+Here I have tried to calculate the rating based on the customer order history. 
+It is not simply a number of a product a customer obtained. Because, consider two customers, A and B, who both ordered a product P. Customer A had ordered 30 products in total and among those orders there are 4 of product P. Customer A also might order other products like Q (12 times), R (7 times) and S (7 times) . While customer B only ordered 5 products and he/she also had 4 product of P. It seems the most preferred product for customer A is product Q, but for customer B, it is product P. The ratio of product P respect to all ordered item for customer  A and customer B <img align="right" height="150"  src="../Capstone_project_2/rating.png">are 0.13 and 0.8 respectively. These number may indicate that how much customers A and B need or like product P. Then they have to be rescaled respect to most preferred product of that customer. In this way, I can tell which product is the favourite of a customer. These ratio may represent the rating of product P from customers A and B. The rating of jth product ordered by ith customer (𝑅𝑖𝑗) has calculated as :
+
+where  𝑛𝑖𝑗  is the quantity of jth product ordered by ith customer.  𝑁𝑖  is the total numper of products ordered by ith customer.
 Related program can be found in a [rating generator](SpringBoard/Capstone_project_2/Code/ranking_generator.ipynb) code. 
 
-The rating value (R<sup>i</sup><sub>j</sub>) of jth product ordered by ith customer has defined as: 
-
-<img align="bottom" width="130" src="../Capstone_project_2/rating.gif">
-
-which p<sup>i</sup><sub>j</sub> is quantity of jth product ordered by ith customer and defined by grouping regarding to user_id and produc_id.
 ```python
 data=pd.DataFrame({'user_portion':df.groupby(['user_id','product_id']).size()}).reset_index()
 ```
@@ -107,6 +107,9 @@ data=data.join(pd.DataFrame({'max_rating':data.groupby('user_id').rating.max()})
 data.rating=(data.rating*100/data.max_rating).round()
 ```
 # Data visualazation
+
+
+
 # The model
 ## Clustering
 ## Colaborative filtering
