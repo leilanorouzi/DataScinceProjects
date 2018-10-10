@@ -72,7 +72,7 @@ order_product_info=order_product.join(products.set_index('product_id'),on='produ
 df=orders.join(order_product_info.set_index('order_id'),on='order_id')
 ```
 The final result was exported into a csv file.
-It was large dataframe including all information on customers, orders and products including features like order_id,	user_id,	eval_set,	order_number,	order_dow,	order_hour_of_day,	days_since_prior_order,	product_id,	add_to_cart_order,	reordered,	aisle_id and	department_id.
+It was large dataframe including all information on customers, orders and products. The size of the file was about. The datafarme was consist of features like order_id,	user_id,	eval_set,	order_number,	order_dow,	order_hour_of_day,	days_since_prior_order,	product_id,	add_to_cart_order,	reordered,	aisle_id and	department_id.
 The code related to this part of project can be found in [InstaCart_data_combining.ipynb](../Capstone_project_2/Code/InstaCart_data_combining.ipynb)
       
 ### Tackeling data problem
