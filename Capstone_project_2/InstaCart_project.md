@@ -73,14 +73,15 @@ df=orders.join(order_product_info.set_index('order_id'),on='order_id')
 ```
 The final result was exported into a csv file.
 It was large dataframe including all information on customers, orders and products including features like order_id,	user_id,	eval_set,	order_number,	order_dow,	order_hour_of_day,	days_since_prior_order,	product_id,	add_to_cart_order,	reordered,	aisle_id and	department_id.
-
-
+The code related to this part of project can be found in [InstaCart_data_combining.ipynb](../Capstone_project_2/Code/InstaCart_data_combining.ipynb)
+      
+### Tackeling data problem
 The data also contain some missing values. In addition, some extra information were needed in order to develope the model such as the rating information. Applied soloutions have been addressed following:
-### Missing data
+#### Missing data
 There two series of missing values in data sets:
 1. Entries for test sets which are indicated by 'test' in eval_set feature. There are no information about products of these orders. These data are suppose to be predict, and naturally, they were eleminated from tarining data.
 2. Entries of the first order of every customer which indicted by NAN in days_since_prior_order feature. These values were replace by -1. 
-### Rating 
+#### Rating 
 Implicit collaborative filtering
 - how many products a customer have ordered in total?
 - How many times a product has been ordered by a customer?
