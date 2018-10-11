@@ -50,7 +50,7 @@ Original 7 files have been downoaded from [kaggle instacart competition website]
 - order_hour_of_day: The hour of the order
 - days_since_prior_order: Indicates there are how many days since previous order of each customer
 ### Dealing with the size of data
-The data were larger than my laptop can handle. One solution was to use cloud servers such as [google colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true). It provides a free Jupyter notebook running on cloud. In this service you have option to use a CPU accelerator or a GPU accelerator one. The GPU accelerator was used in this project.
+The data were larger than my laptop can handle. One solution was to use cloud servers such as [google colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true). It provides a free Jupyter notebook running on cloud. In this service you have option to use a CPU accelerator or a GPU accelerator one. The GPU accelerator was used in this project by going to "Runtime" > "Change runtime type".
 The data were downloaded from the kaggle ste then uploaded to the google drive to use in the code. 
 To get access to the files on google drive an authorization code it necessary which will be given by a linked. Basically,you need to click on the link, log in to you google account and copy and then past the authorization code into provided empty box.
 
