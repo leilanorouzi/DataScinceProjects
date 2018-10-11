@@ -111,7 +111,7 @@ data.rating=(data.rating*100/data.max_rating).round()
 ## order history over the time
 #### Day since prior order
 This histogram shows products were ordered mostly on weekly  or monthly bases. The first column is related to products which had been ordered for the first time  from new cusotmers.
-<img align="right" height="500"  src="../Capstone_project_2/Outputs/DaysSincePriorOrder.png">
+<img align="right" height="500" width="1000" src="../Capstone_project_2/Outputs/DaysSincePriorOrder.png">
 This graph shows that the number of products that people order are higher in the begining of the week. 
 <img align="right" height="500"  src="../Capstone_project_2/Outputs/DaysofWeek.png">
 This picture shows that customer put their orders between 10 am - 5 pm. 
