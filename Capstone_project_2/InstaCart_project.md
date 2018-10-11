@@ -109,26 +109,29 @@ data.rating=(data.rating*100/data.max_rating).round()
 # Data visualazation
 
 ## order history over the time
-
+#### Day since prior order
+This histogram shows products were ordered mostly on weekly  or monthly bases. The first column is related to products which had been ordered for the first time  from new cusotmers.
 <img align="right" height="500"  src="../Capstone_project_2/Outputs/DaysSincePriorOrder.png">
+This graph shows that the number of products that people order are higher in the begining of the week. 
 <img align="right" height="500"  src="../Capstone_project_2/Outputs/DaysofWeek.png">
+This picture shows that customer put their orders between 10 am - 5 pm. 
 <img align="right" height="500"  src="../Capstone_project_2/Outputs/PurchasedTime.png">
 
 ## Product related graphs
 
 ### Number of products
-
-<img align="right" height="500"  src="../Capstone_project_2/Outputs/Quantity_products.png">
-<img align="right" height="500"  src="../Capstone_project_2/Outputs/Quantity_products_zoom.png">
+The distribution of product quantity ordered by customer is shown in two following pictures. These graphs are simillar. However, the second one is focused on products has focused on products with quantity less than 100. 
+<img align="right" height="600"  src="../Capstone_project_2/Outputs/Quantity_products.png">
+<img align="right" height="600"  src="../Capstone_project_2/Outputs/Quantity_products_zoom.png">
 
 ### All products, departments, aisles
-<img align="right" height="500"  src="../Capstone_project_2/Outputs/most20products_allcutomers.png">
-<img align="right" height="500"  src="../Capstone_project_2/Outputs/Allaisles_allcustomer.png">
-<img align="right" height="500"  src="../Capstone_project_2/Outputs/Alldepartments_allcustomer.png">
+Let see what products, departments and aisles are most popular? Here I only have taken first 20 popular items.  
+<img align="right" height="600"  src="../Capstone_project_2/Outputs/most20products_allcutomers.png">
+<img align="right" height="600"  src="../Capstone_project_2/Outputs/Allaisles_allcustomer.png">
+<img align="right" height="600"  src="../Capstone_project_2/Outputs/Alldepartments_allcustomer.png">
 ### First orders
-
-<img align="right" height="500"  src="../Capstone_project_2/Outputs/20aisles_firstday_Allcustomers.png">
-<img align="right" height="500"  src="../Capstone_project_2/Outputs/FirstDayProducts.png">
+I was curious how much products of new customer (in their first order) is different to general order. Regarding to the graph They are almost similar. 
+<img align="right" height="600"  src="../Capstone_project_2/Outputs/FirstDayProducts.png">
 
 # The model
 ## Clustering
