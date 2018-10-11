@@ -25,7 +25,7 @@ Original 7 files have been downoaded from [kaggle instacart competition website]
 
 |File Name | Description | Size | Features |
 |---|---|---|---|
-|aisles|Information about the aisle of the products|134x2, \t2.2+ KB |aisle_id, aisle|
+|aisles|Information about the aisle of the products|134x2, 2.2+ KB |aisle_id, aisle|
 |departments|Information about the department of the products|21x2, 416.0+ bytes|department_id, department|
 |order_products_prior|Information of customer order history|32434489x4, 989.8 MB |order_id, product_id, add_to_cart_order, reordered |
 |order_products_train|Information of customer order history|1384617x4, 42.3 MB |order_id, product_id, add_to_cart_order, reordered |
@@ -108,7 +108,27 @@ data.rating=(data.rating*100/data.max_rating).round()
 ```
 # Data visualazation
 
+## order history over the time
 
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/DaysSincePriorOrder.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/DaysofWeek.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/PurchasedTime.png">
+
+## Product related graphs
+
+### Number of products
+
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/Quantity_products.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/Quantity_products_zoom.png">
+
+### All products, departments, aisles
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/most20products_allcutomers.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/Allaisles_allcustomer.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/Alldepartments_allcustomer.png">
+### First orders
+
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/20aisles_firstday_Allcustomers.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/FirstDayProducts.png">
 
 # The model
 ## Clustering
