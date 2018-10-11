@@ -121,19 +121,22 @@ This picture shows that customer put their orders between 10 am - 5 pm.
 
 ### Number of products
 The distribution of product quantity ordered by customer is shown in two following pictures. These graphs are simillar. However, the second one is focused on products has focused on products with quantity less than 100. 
-<img align="right" height="600"  src="../Capstone_project_2/Outputs/Quantity_products.png">
-<img align="right" height="600"  src="../Capstone_project_2/Outputs/Quantity_products_zoom.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/Quantity_products.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/Quantity_products_zoom.png">
 
 ### All products, departments, aisles
 Let see what products, departments and aisles are most popular? Here I only have taken first 20 popular items.  
-<img align="right" height="600"  src="../Capstone_project_2/Outputs/most20products_allcutomers.png">
-<img align="right" height="600"  src="../Capstone_project_2/Outputs/Allaisles_allcustomer.png">
-<img align="right" height="600"  src="../Capstone_project_2/Outputs/Alldepartments_allcustomer.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/most20products_allcutomers.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/Allaisles_allcustomer.png">
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/Alldepartments_allcustomer.png">
 ### First orders
-I was curious how much products of new customer (in their first order) is different to general order. Regarding to the graph They are almost similar. 
-<img align="right" height="600"  src="../Capstone_project_2/Outputs/FirstDayProducts.png">
+I was curious how much products of new customer (in their first order) is different to general order. Comparing two bar charts from most popular products of all time and most popular pproducts in the first order may implay that they are almost similar. 
+<img align="right" height="500"  src="../Capstone_project_2/Outputs/FirstDayProducts.png">
+
+This comparision shows that the frequency of the order does not influence on what people may order. 
 
 # The model
+
 ## Clustering
 ## Colaborative filtering
 # The result
