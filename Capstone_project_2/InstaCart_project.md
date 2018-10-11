@@ -133,7 +133,30 @@ Let see what products, departments and aisles are most popular? Here I only have
 I was curious how much products of new customer (in their first order) is different to general order. Comparing two bar charts from most popular products of all time and most popular pproducts in the first order may implay that they are almost similar. 
 <img align="right" height="500"  src="../Capstone_project_2/Outputs/FirstDayProducts.png">
 
-This comparision shows that the frequency of the order does not influence on what people may order. 
+This comparision shows that the frequency of the order does not influence  very much on what people may order. As the following table shows products in different time of the purchased are the same with being in different ranking palce.
+
+|Rank|First day|Weekly|Monthly|All time|
+|---|---|---|---|---|
+|1|Banana|Banana|Banana|Banana|
+|2|Bag of Organic Bananas|Bag of Organic Bananas|Bag of Organic Bananas|Bag of Organic Bananas|
+|3|Organic Strawberries|Organic Strawberries|Organic Baby Spinach|Organic Strawberries|
+|4|Organic Avocado|Organic Baby Spinach|Organic Strawberries|Organic Baby Spinach|
+|5|Organic Baby Spinach|Organic Hass Avocado|Large Lemon|Organic Hass Avocado|
+|6|Organic Hass Avocado|Organic Avocado|Organic Hass Avocado|Organic Avocado|
+|7|Strawberries|Large Lemon|Organic Avocado|Large Lemon|
+|8|Limes|Strawberries|Strawberries|Strawberries|
+|9|Large Lemon|Organic Whole Milk|Limes|Limes|
+|10|Organic Whole Milk|Limes|Cucumber Kirby|Organic Whole Milk|
+|11|Organic Blueberries|Organic Raspberries|Organic Yellow Onion|Organic Raspberries|
+|12|Cucumber Kirby|Organic Yellow Onion|Organic Garlic|Organic Yellow Onion|
+|13|Organic Garlic|Organic Fuji Apple|Organic Whole Milk|Organic Garlic|
+|14|Organic Raspberries|Organic Zucchini|Organic Raspberries|Organic Zucchini|
+|15|Yellow Onions|Organic Garlic|Organic Zucchini|Organic Blueberries|
+|16|Organic Yellow Onion|Organic Blueberries|Organic Blueberries|Cucumber Kirby|
+|17|Organic Grape Tomatoes|Cucumber Kirby|Organic Baby Carrots|Organic Fuji Apple|
+|18|Organic Fuji Apple|Apple Honeycrisp Organic|Yellow Onions|Organic Lemon|
+|19|Organic Lemon|Seedless Red Grapes|Sparkling Water Grapefruit|Organic Grape Tomatoes|
+|20|Honeycrisp Apple|Organic Half & Half|Organic Fuji Apple|Apple Honeycrisp Organic
 
 # The model
 
