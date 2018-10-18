@@ -6,8 +6,8 @@
 InstaCart is an american company which provide personal shopping services from different shops and retailers such as WholeFoods and Costco to its customers<a href="#note1" id="note1ref"><sup>1</sup></a>. People can order their groceries via the Instacart app and the website
 https://www.instacart.com/ . After selecting products through the Instacart app, personal shoppers review your order and do the in-store shopping and delivery for you. 
 
-### The competition
-Instacart would like to predict the contents of future orders, such as how many products and  what products people will order. This idea was introduced as a challenge in the kaggle website in 2017 <a href="#note2" id="note2ref"><sup>2</sup></a>. The project asks to predict what products will be ordered by customers.
+### The problem
+Instacart, same as other online shopping web sites, may like to suggest some new item to the customer. This suggestion information may include how many products and  what products a customer will be interested to order. This idea was come from a competition introduced orginally in the kaggle website in 2017 <a href="#note2" id="note2ref"><sup>2</sup></a>. 
 
 ## Recommendation system
 It has worth to be mentioned that every customer has few orders while each order belongs to only one customer. This indicates that the problem is about predict the future customer orders rather than predicting products in each order. This is more like recommending products that you can see all in e-shopping website such as Amazon. The general method is called recommender system as part of information filtering system <a href="#note3" id="note3ref"><sup>3, </sup> </a><a href="#note4" id="note4ref"><sup>4</sup></a>. 
@@ -167,10 +167,72 @@ This matrix can be seperated into two user and peroduct feature matrices as show
 ![figure](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png)*from https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png*.
 ## The model
 
-The implicit model is applying Alternative Least Square (ALS) method combined with Cython and OpenMP to fit the models in parallel among all available CPU cores (please see Jess Wood weblog<a href="#note6" id="note6ref"><sup>6</sup> </a>). This method is much faster than normal ALS mothod. The package was developed by [Ben Frederickson](https://github.com/benfred/implicit). In this method the relationship between user feature matrix and product feature matrix will be obtained by defining a feature weight matrix. Please see [matrix factorization]( https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/) for more details. 
+The implicit model is applying Alternative Least Square (ALS) method combined with Cython and OpenMP to fit the models in parallel among all available CPU cores (please see Jess Wood weblog<a href="#note6" id="note6ref"><sup>6</sup> </a>). This method is much faster than normal ALS mothod. Implicit package was originally developed by [Ben Frederickson](https://github.com/benfred/implicit). In this method the relationship between user feature matrix and product feature matrix will be obtained by defining a feature weight matrix. Please see [matrix factorization]( https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/) for more details. 
 
-## evaluation
-To eveluate the model, %20 of the infomation in user-product matrix were removed delibartly to make a training set and construct a test data set.
+## The result and the evaluation
+Here we don't have a specific tset set to evalute the result. Therefore,a test set was made. %20 of the infomation in user-product matrix were removed delibartly to make a training set and construct a test data set. A model based on implict colaborative filtering was developed and can be found in this [link]().
+### An exaple
+The cusotmer with user_id 1 have ordered products below:
+
+|Organic Whole Kernel Sweet Corn No Salt Added|
+|Semi-Soft Cheese, Ripened|
+|Organic Spinach & Cheese Tortellini|
+|Organic Red Onion|
+|Red Raspberries|
+|Lightly Salted Baked Snap Pea Crisps|
+|Snow Peas|
+|Organic Raw Agave Nectar|
+|Large Organic Omega3 Brown Eggs|
+|Sharp Cheddar Cheese|
+|Balsamic Vinegar Of Modena|
+|Organic Large Extra Fancy Fuji Apple|
+|Jalapeno Peppers|
+|Mediterranean Mint Gelato|
+|100% Pure Eucalyptus Essential Oil|
+|Organic Soba|
+|Organic Baby Arugula|
+|Jicama|
+|Tahitian Vanilla Bean Gelato|
+|Plain Whole Milk Yogurt|
+|Organic Blackberries|
+|Uncured Genoa Salami|
+|Organic Shredded Carrots|
+|Organic Cilantro|
+|Organic Grape Tomatoes|
+|Whole Vitamin D Milk|
+|Tamari Gluten Free Soy Sauce|
+|Organic Red Cabbage|
+
+
+     product_id                                       product_name
+17      1938.0                                     Beef Stew Meat
+26      2314.0                          Whole Milk Ricotta Cheese
+18      4189.0  Yogurt, Goat Milk, and Fruit, Banana & Natural...
+4       4269.0                                Mild Cheddar Cheese
+2       5020.0  Organic  Sweet & Salty Peanut Pretzel Granola ...
+13      5024.0                Dark Red Kidney Beans No Salt Added
+7       7371.0                    Chocolate Chip Cookie Dough Bar
+8       9780.0                                    Tomato GemWraps
+12     15109.0                 Eggo Blueberry Waffles Family Pack
+1      15604.0                              Fat Free Plain Yogurt
+25     16462.0                    Ready-to-Bake 9 Inch Pie Crusts
+20     17630.0   YoKids Squeeze! Organic Strawberry Flavor Yogurt
+14     23579.0  Peanut Butter Chocolate Chip Fruit & Nut Food Bar
+6      25207.0                                      Spinach Bunch
+16     27531.0        Dairy Free Unsweetened Vanilla Coconut Milk
+5      28851.0                  Cage Free  100% Liquid Egg Whites
+27     31528.0                    Natural Emmentaler Swiss Cheese
+9      31720.0                                Organic  Whole Milk
+11     34497.0                              Prosciutto, Americano
+0      36222.0         Hot Jalapeno Peppers with Carrots & Onions
+24     39279.0  Fat Free Smart Ground Mexican Style Taco Prote...
+21     39619.0                   Organic Tomato Basil Pasta Sauce
+3      40336.0                         Pop Up Bowl Butter Popcorn
+23     42449.0            Organic 65% Cacao Bittersweet Chocolate
+22     43192.0  Dark with 70% Cacao Content Organic Chocolate Bar
+10     47156.0           Coconut Almond Unsweetened Creamer Blend
+15     48105.0                          Gingerbread Spice Cookies
+19     49215.0               Kids Sensible Foods Broccoli Littles
 # Refferences
 <a id="note1" href="#note1ref"><sup>1</sup></a>https://en.wikipedia.org/wiki/Instacart
 
