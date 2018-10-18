@@ -159,11 +159,18 @@ This comparision shows that the frequency of the order does not influence  very 
 |20|Honeycrisp Apple|Organic Half & Half|Organic Fuji Apple|Apple Honeycrisp Organic
 
 # The model
+### User_item vector
+To run the model, a vector including user and product ranking information is needed. 
+The rating information has been calculated. Due to large number of products and users, the vector has been created as a sparse matrix. The columns are product_id and the rows are user_id. The values of the matrix are rating data. When a customer has ordered a product there is a non-zero value corresponding to that user row and product column. For example custome 1 had oreded product 10258 with rating of 91 and product 13032 with rating of 36. Values of the sparse matrix in row 1, column 10258 would be 91 and for row 1, column 13032 would be 36 and the rest would be zero.
+The realted [code](../Capstone_project_2/Code/making_sparse.ipynb) generates a saprse matrix in npz format. 
+This matrix can be seperated into two user and peroduct feature matrices as shown in this
+![figure](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png)*from https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png*.
+## The model
 
-## Clustering
-## Colaborative filtering
-# The result
+The implicit model is applying Alternative Least Square (ALS) method combined with Cython and OpenMP to fit the models in parallel among all available CPU cores (please see Jess Wood weblog<a href="#note6" id="note6ref"><sup>6</sup> </a>). This method is much faster than normal ALS mothod. The package was developed by [Ben Frederickson](https://github.com/benfred/implicit). In this method the relationship between user feature matrix and product feature matrix will be obtained by defining a feature weight matrix. Please see [matrix factorization]( https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/) for more details. 
+
 ## evaluation
+To eveluate the model, %20 of the infomation in user-product matrix were removed delibartly to make a training set and construct a test data set.
 # Refferences
 <a id="note1" href="#note1ref"><sup>1</sup></a>https://en.wikipedia.org/wiki/Instacart
 
@@ -174,3 +181,6 @@ This comparision shows that the frequency of the order does not influence  very 
 <a id="note4" href="#note4ref"><sup>4</sup></a>https://medium.com/recombee-blog/machine-learning-for-recommender-systems-part-1-algorithms-evaluation-and-cold-start-6f696683d0ed
 
 <a id="note5" href="#note5ref"><sup>5</sup></a>https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/
+
+<a id="note6" href="#note6ref"><sup>6</sup></a>https://jessesw.com/Rec-System/
+
