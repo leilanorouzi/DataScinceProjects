@@ -176,7 +176,7 @@ Here we don't have a specific tset set to evalute the result. Therefore,a test s
 ### An exaple
 In the table below, products ordered by customer #5 and suggested products have been shown in two columns. SSUggested products are based other people rating. 
 The cusotmer # 5 have ordered products below:
-![recommended products](../Capstone_project_2/Outputs/recommended_product.png)
+![recommended products](../Capstone_project_2/recommended_product.png)
 
 # Refferences
 <a id="note1" href="#note1ref"><sup>1</sup></a>https://en.wikipedia.org/wiki/Instacart
