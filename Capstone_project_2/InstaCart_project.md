@@ -168,7 +168,7 @@ This matrix can be seperated into two user and peroduct feature matrices as show
 ## The model
 
 The implicit model is applying Alternative Least Square (ALS) method combined with Cython and OpenMP to fit the models in parallel among all available CPU cores (please see Jess Wood weblog<a href="#note6" id="note6ref"><sup>6</sup> </a>). This method is much faster than normal ALS mothod. Implicit package was originally developed by [Ben Frederickson](https://github.com/benfred/implicit). In this method the relationship between user feature matrix and product feature matrix will be obtained by defining a feature weight matrix. Please see [matrix factorization]( https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/) for more details. 
-A model based on implict colaborative filtering was developed and can be found in this [code]().
+A model based on implict colaborative filtering was developed and can be found in this [code](../Capstone_project_2/Code/Implicit_collab_filtering.ipynb).
 
 ## The result and the evaluation
 Here we don't have a specific tset set to evalute the result. Therefore,a test set was made. %20 of the infomation in user-product matrix were removed delibartly to make a training set and construct a test data set. The mean [AUC](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) (area under curve) was calculated to assess the model. Overall, the model presents about %96 mean AUC. 
