@@ -158,25 +158,40 @@ This comparision shows that the frequency of the order does not influence  very 
 |19|Organic Lemon|Seedless Red Grapes|Sparkling Water Grapefruit|Organic Grape Tomatoes|
 |20|Honeycrisp Apple|Organic Half & Half|Organic Fuji Apple|Apple Honeycrisp Organic
 
-# The model
+# Developed model
 ### User_item vector
 To run the model, a vector including user and product ranking information is needed. 
 The rating information has been calculated. Due to large number of products and users, the vector has been created as a sparse matrix. The columns are product_id and the rows are user_id. The values of the matrix are rating data. When a customer has ordered a product there is a non-zero value corresponding to that user row and product column. For example custome 1 had oreded product 10258 with rating of 91 and product 13032 with rating of 36. Values of the sparse matrix in row 1, column 10258 would be 91 and for row 1, column 13032 would be 36 and the rest would be zero.
 The realted [code](../Capstone_project_2/Code/making_sparse.ipynb) generates a saprse matrix in npz format. 
 This matrix can be seperated into two user and peroduct feature matrices as shown in this
 ![figure](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png)*from https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png*.
-## The model
+## The implicit model
 
 The implicit model is applying Alternative Least Square (ALS) method combined with Cython and OpenMP to fit the models in parallel among all available CPU cores (please see Jess Wood weblog<a href="#note6" id="note6ref"><sup>6</sup> </a>). This method is much faster than normal ALS mothod. Implicit package was originally developed by [Ben Frederickson](https://github.com/benfred/implicit). In this method the relationship between user feature matrix and product feature matrix will be obtained by defining a feature weight matrix. Please see [matrix factorization]( https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/) for more details. 
 A model based on implict colaborative filtering was developed and can be found in this [code](../Capstone_project_2/Code/Implicit_collab_filtering.ipynb).
 
-## The result and the evaluation
+### The result and the issue
 Here we don't have a specific tset set to evalute the result. Therefore,a test set was made. %20 of the infomation in user-product matrix were removed delibartly to make a training set and construct a test data set. The mean [AUC](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) (area under curve) was calculated to assess the model. Overall, the model presents about %96 mean AUC. 
 
-### An exaple
+After runing the model an example was teseted. the result is presented below:
+
+#### An exaple
 In the table below, products ordered by customer #5 and suggested products have been shown in two columns. SSUggested products are based other people rating. 
 The cusotmer # 5 have ordered products below:
 ![recommended products](../Capstone_project_2/recommended_product.png)
+
+The recomended model is not exactly make sence. You would expect for a person who majorly buys produces and vegetables the recomendation would be is this cathegory, which hardly can be seen in the result. One researn can be other customers ewith other intersts has dominated the rating information and as result baised the outcome. Therefore, one way to tackle the issue is to make group of customers who share similar tastes.
+
+## Imporvement
+### Features
+The first insight is to cluster the customers based on their perchased items. This approach does not feasible due to large amont of products. So, the other less memory consuming solution is clustering by aisles or departments. There only 21 departments and they are categorical features. The categorical features have to convert to statistical or numerical features to be able put them in a cluastering model. Here is the foloowing step to prepare inputs for a clustering model:
+1- The rating value of the deartments were calculated as explained before
+2- A  matrix of rating values was constructed. The rows were customer ids, columns were department ids and values were rating.
+### GMM clustering model
+Having data ready, the [gaussin mixture model](http://scikit-learn.org/stable/modules/mixture.html) (GMM) clustering model was run to group similar costomers. GMM is a more general method of Kmeans model. The suitable parameters of GMM model were chosen by running a [selection method](http://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py).  Same as elbow method, this method present a visual result for different options but it would be in bar char form. The shortest bar is the best option for the data. The result of selection method is shown following: ![GMM selection method result](../Capstone_project_2/GMM_bic_dprt_rate.png). Finally the GMM model gives 19 different groups. 
+### Final model
+Finally the implicit model was run for every group of costumer clustered by GMM model. The results are more aceptable comapre to the lat one. The average AUC of all clusters is . An axample of the result is given below. ![customer 105 recommendation](
+../Capstone_project_2/DprtClustedGMM_result.png). 
 
 # Refferences
 <a id="note1" href="#note1ref"><sup>1</sup></a>https://en.wikipedia.org/wiki/Instacart
