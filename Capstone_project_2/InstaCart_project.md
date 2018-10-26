@@ -191,7 +191,7 @@ The first insight is to cluster the customers based on their perchased items. Th
 Having data ready, the [gaussin mixture model](http://scikit-learn.org/stable/modules/mixture.html) (GMM) clustering model was run to group similar costomers. GMM is a more general method of Kmeans model. The suitable parameters of GMM model were chosen by running a [selection method](http://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py).  Same as elbow method, this method present a visual result for different options but it would be in bar char form. The shortest bar is the best option for the data. The result of selection method is shown following: <p align="center"><img  title="GMM selection method result" height="350" src="../Capstone_project_2/GMM_bic_dprt_rate.png"></p>. Finally the GMM model gives 19 different groups of customers. 
 ### Final model
 
-Finally the implicit model was run for every group of costumer clustered by GMM model. The results are more aceptable comapre to the lat one. The average AUC of all clusters is . An axample of the result for customer 105 is given here. The left table shows the recommended items and right table shows products that customer 105 had ordered. 
+Finally the implicit model was run for every group of costumer clustered by GMM model. The results are more aceptable comapre to the lat one. The average AUC of all clusters is %89. An axample of the result for customer 105 is given here. The left table shows 10 most recommended items and right table shows products that had been ordered. 
 <p align="center">
 <img title="An example of final model, customer 105" height="350" src="../Capstone_project_2/DprtClustedGMM_result.png">
 </p>
