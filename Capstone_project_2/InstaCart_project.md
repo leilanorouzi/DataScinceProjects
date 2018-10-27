@@ -41,18 +41,18 @@ Original 7 files have been downoaded from [kaggle instacart competition website]
 - product_id: The code of products
 - product_name: The name of the products
 - order_id: The code if orders
-- add_to_cart_order: Indicates that a products has been added to current cart or not
+- add_to_cart_order: Indicates that products has been added to the current cart or not
 - reordered: Indicates that the customer has a previous order that contains the product
 - user_id: the code for each customer
-- eval_set: Contains prior, train and test. It  indicates if the entry is from previous order or it has to be predicted. The test entries will be remove from taring model. 
+- eval_set: Contains prior, train and test. It indicates if the entry is from previous orders or it has to be predicted. The test entries will be removed from dataset. 
 - order_number: Indicates that that particular order is nth order of that particular customer
 - order_dow: Indicates that order had been put in what day of the week
 - order_hour_of_day: The hour of the order
-- days_since_prior_order: Indicates there are how many days since previous order of each customer
+- days_since_prior_order: Indicates there are how many days since the previous order of each customer
 ### Dealing with the size of data
-The data were larger than my laptop can handle. One solution was to use cloud servers such as [google colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true). It provides a free Jupyter notebook running on cloud. In this service you have option to use a CPU accelerator or a GPU accelerator one. The GPU accelerator was used in this project by going to "Runtime" > "Change runtime type".
-The data were downloaded from the kaggle ste then uploaded to the google drive to use in the code. 
-To get access to the files on google drive an authorization code it necessary which will be given by a linked. Basically,you need to click on the link, log in to you google account and copy and then past the authorization code into provided empty box.
+The data were larger than my laptop can handle. One solution was to use cloud servers such as [google colaboratory](https://colab.research.google.com/notebooks/welcome.ipynb#recent=true). It provides a free Jupyter notebook running on the cloud. In this service, you have options to use a CPU accelerator or a GPU accelerator one. The GPU accelerator was used in this project by going to "Runtime" > "Change runtime type".
+The data were downloaded from the kaggle site then uploaded to the google drive to use in the code. 
+To get access to the files on google drive an authorization code it necessary which will be given by a linked. Basically, you need to click on the link, log in to your google account and copy and then past the authorization code into provided empty box.
 
 Furthermore, some data were deleted from the program to recover more memory in the system, whenever those data were no longer required. 
 
@@ -76,19 +76,19 @@ It was large dataframe including all information on customers, orders and produc
 The code related to this part of project can be found in [InstaCart_data_combining.ipynb](../Capstone_project_2/Code/InstaCart_data_combining.ipynb)
       
 ### Tackling data problem
-The data also contain some missing values. In addition, some extra information were needed in order to develope the model such as the rating information. Applied solutions have been addressed following:
+The data also contain some missing values. In addition, some extra information were needed in order to develop the model such as the rating information. Applied solutions have been addressed following:
 #### Missing data
-There two series of missing values in data sets:
-1. Entries for test sets which are indicated by 'test' in eval_set feature. There are no information about products of these orders. These data are suppose to be predict, and naturally, they were eleminated from tarining data.
-2. Entries of the first order of every customer which indicted by NAN in days_since_prior_order feature. These values were replace by -1. 
+There were two series of missing values in data sets:
+1. Entries for test sets which are indicated by 'test' in eval_set feature. There are no information about products of these orders. These data are supposed to be predicted, and naturally, they were eliminated from training data.
+2. Entries of the first order of every customer which indicted by NAN in days_since_prior_order feature. These values were replaced by -1. 
 #### Rating 
 
-In implicit collaborative filtering we need a rating information of items (in this case products). There is no rating data in this project, so we make it. Rating inforamtion is made from the history of customer oreders. If people like a product, they intend to buy it more and more. Therefore, the number of product ordered by a customer can be represnt the rating of the product. In this approach, We need to know:
+In implicit collaborative filtering, we need a rating information of items (in this case products). There is no rating data in this project, so we make it. Rating information is made from the history of customer orders. If people like a product, they intend to buy it more and more. Therefore, the number of product ordered by a customer can represent the rating of the product. In this approach, We need to know:
 - how many products a customer have ordered in total?
 - How many times a product has been ordered by a customer?
 
 Here I have tried to calculate the rating based on the customer order history. 
-It is not simply a number of a product a customer obtained. Because, consider two customers, A and B, who both ordered a product P. Customer A had ordered 30 products in total and among those orders there are 4 of product P. Customer A also might order other products like Q (12 times), R (7 times) and S (7 times) . While customer B only ordered 5 products and he/she also had 4 product of P. It seems the most preferred product for customer A is product Q, but for customer B, it is product P. The ratio of product P respect to all ordered item for customer  A and customer B <img align="right" height="150"  src="../Capstone_project_2/rating.png">are 0.13 and 0.8 respectively. These number may indicate that how much customers A and B need or like product P. Then they have to be rescaled respect to most preferred product of that customer. In this way, I can tell which product is the favourite of a customer. These ratio may represent the rating of product P from customers A and B. The rating of jth product ordered by ith customer (𝑅𝑖𝑗) has calculated as :
+It is not simply a number of a product a customer obtained. Because, consider two customers, A and B, who both ordered a product P. Customer A had ordered 30 products in total and among those orders there are 4 of product P. Customer A also might order other products like Q (12 times), R (7 times) and S (7 times) . While customer B only ordered 5 products and he/she also had 4 product of P. It seems the most preferred product for customer A is product Q, but for customer B, it is product P. The ratio of product P respect to all ordered item for customer  A and customer B <img align="right" height="150"  src="../Capstone_project_2/rating.png">are 0.13 and 0.8 respectively. These number may indicate that how much customers A and B need or like product P. Then they have to be rescaled respect to the most preferred product of that customer. In this way, I can tell which product is the favourite of a customer. These ratios may represent the rating of product P from customers A and B. The rating of jth product ordered by ith customer (𝑅𝑖𝑗) has calculated as :
 
 where  𝑛𝑖𝑗  is the quantity of jth product ordered by ith customer.  𝑁𝑖  is the total numper of products ordered by ith customer.
 Related program can be found in a [rating generator](SpringBoard/Capstone_project_2/Code/ranking_generator.ipynb) code. 
@@ -162,9 +162,9 @@ This comparision shows that the frequency of the order does not influence  very 
 ### User_item vector
 To run the model, a vector including user and product ranking information is needed. 
 The rating information has been calculated. Due to large number of products and users, the vector has been created as a sparse matrix.
- The columns are product_id and the rows are user_id. The values of the matrix are rating data. When a customer has ordered a product there is a non-zero value corresponding to that user row and product column. For example custome 1 had oreded product 10258 with rating of 91 and product 13032 with rating of 36. Values of the sparse matrix in row 1, column 10258 would be 91 and for row 1, column 13032 would be 36 and the rest would be zero.
+ The columns are product_id and the rows are user_id. The values of the matrix are the rating data. When a customer has ordered a product there is a non-zero value corresponding to that user row and product column. For example, customer 1 had ordered product 10258 with rating 91 and product 13032 with rating of 36. Values of the sparse matrix in row 1, column 10258 would be 91 and for row 1, column 13032 would be 36 and the rest would be zero.
 The realted [code](../Capstone_project_2/Code/making_sparse.ipynb) generates a saprse matrix in npz format. 
-This matrix can be seperated into two user and peroduct feature matrices as shown in this
+This matrix can be separated into two user and product feature matrices as shown in this
 
 <p align="center">
 <img title="Factorization matix"  height="200" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png">
@@ -174,40 +174,40 @@ This matrix can be seperated into two user and peroduct feature matrices as show
 
 ## The implicit model
 
-The implicit model is applying Alternative Least Square (ALS) method combined with Cython and OpenMP to fit the models in parallel among all available CPU cores (please see Jess Wood weblog<a href="#note6" id="note6ref"><sup>6</sup> </a>). This method is much faster than normal ALS mothod. Implicit package was originally developed by [Ben Frederickson](https://github.com/benfred/implicit). In this method the relationship between user feature matrix and product feature matrix will be obtained by defining a feature weight matrix. Please see [matrix factorization]( https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/) for more details. 
-A model based on implict colaborative filtering was developed and can be found in this [code](../Capstone_project_2/Code/Implicit_collab_filtering.ipynb).
-
+The implicit model is applying Alternative Least Square (ALS) method combined with Cython and OpenMP to fit the models in parallel among all available CPU cores (please see Jess Wood weblog<a href="#note6" id="note6ref"><sup>6</sup> </a>). This method is much faster than normal ALS method. The implicit package was originally developed by [Ben Frederickson](https://github.com/benfred/implicit). In this method the relationship between user feature matrix and product feature matrix will be obtained by defining a feature weight matrix. Please see [matrix factorization]( https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/) for more details. 
+A model based on implicit collaborative filtering was developed and can be found in this [code](../Capstone_project_2/Code/Implicit_collab_filtering.ipynb).
 ### The result and the issue
-Here we don't have a specific tset set to evalute the result. Therefore,a test set was made. %20 of the infomation in user-product matrix were removed delibartly to make a training set and construct a test data set. The mean [AUC](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) (area under curve) was calculated to assess the model. Overall, the model presents about %96 mean AUC. 
-
-After runing the model an example was teseted. the result is presented below:
-
-#### An exaple
-In the table below, products ordered by customer 5 and suggested products have been shown in two columns. SSUggested products are based other people rating. 
+Here we don't have a specific test set to evaluate the result. Therefore, a test set was made. %20 of the infomation in user-product matrix were removed delibartly to make a training set and construct a test data set. The mean [AUC](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) (area under the curve) was calculated to assess the model. Overall, the model presents about %96 mean AUC. 
+After runing the model an example was tested. the result is presented following:
+#### An example
+In the table below, products ordered by customer 5 and suggested products have been shown in two columns. Suggested products are based other people rating. 
 The cusotmer # 5 have ordered products below:
 <p align="center">
 <img title="An example of final model, customer 105" height="500" src="../Capstone_project_2/recommended_product.png">
 </p>
 
-The recomended model is not exactly make sence. You would expect for a person who majorly buys produces and vegetables the recomendation would be is this cathegory, which hardly can be seen in the result. One researn can be other customers ewith other intersts has dominated the rating information and as result baised the outcome. Therefore, one way to tackle the issue is to make group of customers who share similar tastes.
+Recommended model is not exactly made sense. You would expect for a person who majorly buys produces and vegetables, his/her recommended items would be almost in the same category, which hardly can be seen in the result. One reason can be other customers with other interests have dominated the rating information and as result biased the outcome. Therefore, one way to tackle the issue is to make groups of customers who share similar tastes.
 
-## Imporvement
+## Improvement
+
 ### Features
-The first insight is to cluster the customers based on their perchased items. This approach does not feasible due to large amont of products. So, the other less memory consuming solution is clustering by aisles or departments. There only 21 departments and they are categorical features. The categorical features have to convert to statistical or numerical features to be able put them in a cluastering model. Here is the foloowing step to prepare inputs for a clustering model:
-1- The rating value of the deartments were calculated as explained before
-2- A  matrix of rating values was constructed. The rows were customer ids, columns were department ids and values were rating.
+The first insight is to cluster the customers based on their purchased items. This approach does not feasible due to the high number of products. So, the other less memory consuming solution is clustering by aisles or departments. There only 21 departments and they are categorical features. The categorical features have to convert to statistical or numerical features to be able to put them in a clustering model. Here is the following step to prepare inputs for a clustering model:
+1. The rating value of the departments were calculated as explained before
+2. A  matrix of rating values was constructed. The rows were customer ids, columns were department ids and values were rating.
 ### GMM clustering model
-Having data ready, the [gaussin mixture model](http://scikit-learn.org/stable/modules/mixture.html) (GMM) clustering model was run to group similar costomers. GMM is a more general method of Kmeans model. The suitable parameters of GMM model were chosen by running a [BIC criterion selection method](http://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py).  Same as elbow method, this method present a visual result for different options but it would be in bar char form. The shortest bar is the best option for the data. The result of selection method is shown following: <p align="center"><img  title="GMM selection method result" height="250" width="650" src="../Capstone_project_2/GMM_bic_dprt_rate.png"></p>. Finally [the GMM model](
+Having data ready, the [gaussin mixture model](http://scikit-learn.org/stable/modules/mixture.html) (GMM) clustering model was run to group similar customers. GMM is a more general method of Kmeans model. The suitable parameters of GMM model were chosen by running a [BIC criterion selection method](http://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py).  Same as elbow method, this method presents a visual result for different options but it would be in a bar chart form. The shortest bar is the best option for the data. The result of selection method is shown following:  <p align="center"><img  title="GMM selection method result" height="250" width="650" src="../Capstone_project_2/GMM_bic_dprt_rate.png"></p>. Finally [the GMM model](
 ../Capstone_project_2/Code/Clustering_deprt_user-rating.ipynb) gives 19 different groups of customers. 
 ### Final model
-
-Finally combined [clustering-implicit model](../Capstone_project_2/Code/Implicit_collab_filtering_clustering_dprt-final.ipynb) was run for every group of costumer clustered by GMM model. The results are more aceptable comapre to the lat one. The average AUC of all clusters is %89. An axample of the result for customer 6 from first cluster is given here. The left table shows 10 most recommended items and right table shows products that had been ordered. 
+Finally a combined [clustering-implicit model](../Capstone_project_2/Code/Implicit_collab_filtering_clustering_dprt-final.ipynb) was run for every group of costumer clustered by GMM model. The results are more acceptable compared to the last one. The average AUC of all clusters is %89. An example of the result for customer 6 from the 1st cluster is given here. The left table shows 10 most recommended items and the right table shows products that had been ordered by the customer.
 <p align="center">
 <img title="An example of final model, customer 105" width="900" height="250" src="../Capstone_project_2/DprtClustedGMM_result.png">
 </p>
 Although the value of acu has decreased, the results are more related to customer interests. 
 
+
+
 # Refferences
+
 <a id="note1" href="#note1ref"><sup>1</sup></a>https://en.wikipedia.org/wiki/Instacart
 
 <a id="note2" href="#note2ref"><sup>2</sup></a>https://www.kaggle.com/c/instacart-market-basket-analysis
