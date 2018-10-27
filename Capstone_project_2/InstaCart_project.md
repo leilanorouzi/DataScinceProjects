@@ -176,9 +176,11 @@ Here we don't have a specific tset set to evalute the result. Therefore,a test s
 After runing the model an example was teseted. the result is presented below:
 
 #### An exaple
-In the table below, products ordered by customer #5 and suggested products have been shown in two columns. SSUggested products are based other people rating. 
+In the table below, products ordered by customer 5 and suggested products have been shown in two columns. SSUggested products are based other people rating. 
 The cusotmer # 5 have ordered products below:
-![recommended products](../Capstone_project_2/recommended_product.png)
+<p align="center">
+<img title="An example of final model, customer 105" height="500" src="../Capstone_project_2/recommended_product.png">
+</p>
 
 The recomended model is not exactly make sence. You would expect for a person who majorly buys produces and vegetables the recomendation would be is this cathegory, which hardly can be seen in the result. One researn can be other customers ewith other intersts has dominated the rating information and as result baised the outcome. Therefore, one way to tackle the issue is to make group of customers who share similar tastes.
 
@@ -193,7 +195,7 @@ Having data ready, the [gaussin mixture model](http://scikit-learn.org/stable/mo
 
 Finally the implicit model was run for every group of costumer clustered by GMM model. The results are more aceptable comapre to the lat one. The average AUC of all clusters is %89. An axample of the result for customer 6 from first cluster is given here. The left table shows 10 most recommended items and right table shows products that had been ordered. 
 <p align="center">
-<img title="An example of final model, customer 105" height="350" src="../Capstone_project_2/DprtClustedGMM_result.png">
+<img title="An example of final model, customer 105" height="250" src="../Capstone_project_2/DprtClustedGMM_result.png">
 </p>
 Although the value of acu has decreased, the results are more related to customer interests. 
 
