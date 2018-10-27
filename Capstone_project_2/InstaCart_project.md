@@ -161,15 +161,16 @@ This comparision shows that the frequency of the order does not influence  very 
 # Developed model
 ### User_item vector
 To run the model, a vector including user and product ranking information is needed. 
-The rating information has been calculated. Due to large number of products and users, the vector has been created as a sparse matrix. The columns are product_id and the rows are user_id. The values of the matrix are rating data. When a customer has ordered a product there is a non-zero value corresponding to that user row and product column. For example custome 1 had oreded product 10258 with rating of 91 and product 13032 with rating of 36. Values of the sparse matrix in row 1, column 10258 would be 91 and for row 1, column 13032 would be 36 and the rest would be zero.
-
-<img align="right" title="Factorization matix"  height="250" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png">
-*from https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png*.
-
-
+The rating information has been calculated. Due to large number of products and users, the vector has been created as a sparse matrix.
+ The columns are product_id and the rows are user_id. The values of the matrix are rating data. When a customer has ordered a product there is a non-zero value corresponding to that user row and product column. For example custome 1 had oreded product 10258 with rating of 91 and product 13032 with rating of 36. Values of the sparse matrix in row 1, column 10258 would be 91 and for row 1, column 13032 would be 36 and the rest would be zero.
 The realted [code](../Capstone_project_2/Code/making_sparse.ipynb) generates a saprse matrix in npz format. 
 This matrix can be seperated into two user and peroduct feature matrices as shown in this
 
+<p align="center">
+<img title="Factorization matix"  height="200" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png">
+ 
+<sub>from https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/05/Matrix_factorization.png<sub/>
+<p/>
 
 ## The implicit model
 
