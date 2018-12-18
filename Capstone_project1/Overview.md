@@ -87,7 +87,7 @@ These new variables of a restaurant may represent the quality and popularity of 
 
 Another variable I was thinking of was the capacity of the restaurant, which again it has not be given initially. 10 customers for a restaurant can be a fully booked reservation, while for some other, it is only a fraction of the total number of customers they can take in at any time. So, the best way to estimate this variable was to calculate the maximum number of people can be taken in an hour for every restaurant. I call them weighted factors.
 
-The code of this part can be found in ![predicting model code] https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Codes/MultiRegression_model_RRVF.ipynb.
+The code of this part can be found in [predicting model code] https://github.com/leilanorouzi/SpringBoard/blob/master/Capstone_project1/Codes/MultiRegression_model_RRVF.ipynb.
 
 ### Data selection
 Now, having all possible variables of the project, the most related variables should be selected to use for the model. The time appeared to be irrelevant for the model. I have tried two methods, correlation between variables and feature selection from random forest method.  The calculation showed that time difference between reservation and visit, the capacity of the restaurant, the date are most correlated independent variable to the number of visitors. 
@@ -101,7 +101,7 @@ Then these data were split into train and test datasets to use in the model.
 One of the problem in this project was the unequal number of observations for different restaurants. That makes it harder to have an accurate prediction. Moreover, forecasting the number of visitors to a restaurant is highly depends on the popularity of the store. This suggests that we need some sort of clustering method to find similarity between restaurants and entries. 
 On the other hand, the number of visitors can be considered a function of those weighted factors and categorical features. Therefore, we need a regression model to predict the number of visitors.
  
-All things considered, a combined model was developed using ![StackingRegressor]
+All things considered, a combined model was developed using [StackingRegressor]
 https://rasbt.github.io/mlxtend/user_guide/regressor/StackingRegressor/. In this approach a random forest regression, regression based on k-nearest neighbors (KNeighborsRegressor) and Extreme Gradient Boosting (XGBRegressor) models were put together. 
 
 ## Results and Error and accuracy
