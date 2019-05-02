@@ -7,7 +7,7 @@ InstaCart is an american company which provide personal shopping services from d
 https://www.instacart.com/ . After selecting products through the Instacart app, personal shoppers review your order and do the in-store shopping and delivery for you. 
 
 ### The problem
-Instacart, same as other online shopping web sites, may like to suggest some new item to the customer. This suggestion information may include how many products and  what products a customer will be interested to order. This idea was come from a competition introduced orginally in the kaggle website in 2017 <a href="#note2" id="note2ref"><sup>2</sup></a>. 
+Instacart, same as other online shopping web sites, may like to suggest some new item to the customer. This suggestion information may include how many products and  what products a customer will be interested to order. <a href="#note2" id="note2ref"><sup>2</sup></a>. 
 
 ## Recommendation system
 It has worth to be mentioned that every customer has few orders while each order belongs to only one customer. This indicates that the problem is about predict the future customer orders rather than predicting products in each order. This is more like recommending products that you can see all in e-shopping website such as Amazon. The general method is called recommender system as part of information filtering system <a href="#note3" id="note3ref"><sup>3, </sup> </a><a href="#note4" id="note4ref"><sup>4</sup></a>. 
